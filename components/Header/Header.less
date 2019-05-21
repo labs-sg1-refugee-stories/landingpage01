@@ -1,0 +1,128 @@
+header  {
+
+    .header-inner {
+        display: flex;
+
+        
+        .right-container    {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 90%;
+
+            .mobile     {
+                display: none;
+            }
+
+            .top    {
+                display: flex;
+                flex-direction: row-reverse;
+                background-color: #f2f2f2;
+                align-items: center;
+                
+
+                .search-box input   {
+                    height: 30px;
+                    width: 300px;
+                    font-size: 1.5rem;
+                    padding: 8px;
+                    border: 1px thin #ccc;
+                    outline: none;
+                    //display: none;
+                }
+
+                .search-box button  {
+                    padding: 8px 0px;
+                    text-align: center;
+                    border: none;
+                    background-color: transparent;
+                }
+
+                .icon   {
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    color: #000;
+                }
+
+                .social-media   {
+                    padding: 5px;
+
+                    a   {
+                        display: inline-block;
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .bottom     {
+                display: flex;
+                justify-content: flex-end;
+                background-color: #fff;
+                padding: 10px;
+
+                nav     {
+                    display: flex;
+
+                    ul  {
+                        display: flex;
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+
+                        a   {
+                            color: #000;
+                            margin-right: 2rem;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            display: inline-block;
+                            padding: 10px 5px;
+                            text-align: center;
+                            line-height: 30px;
+                        }
+
+                    }
+
+                    .donate     {
+                        border: 1px solid red;
+                        //display: block;
+                        //line-height: 40px;
+                        background-color: red;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 120px;
+                        color: #fff;
+                        font-weight: 900;
+                        text-decoration: none;
+                        
+                    }
+
+                }
+
+               
+            }
+
+        }
+
+        .logo-container     {
+            width: 12%;
+            background-color: #0180C7;
+            text-align: center;
+            
+
+            a   {
+                text-decoration: none;
+                height: 100%;
+                font-size: 2rem;
+                font-weight: 900;
+                color: #fff;
+            }
+        }
+    }
+}

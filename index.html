@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Refugees Stories</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-container">
+                    <a href="#" class="logo">Refugee<br>Stories</a>
+                </div><!-- logo-container ends -->
+                <div class="right-container">
+                    <div class="top">
+                        <div id="search-box" class="search-box">
+                            <form action="">
+                                <input type="text" name="search" id="search">
+                                <button type="submit"><i class="fas fa-search icon"></i></button>
+                            </form>
+                        </div><!-- search-box ends -->
+                        <div class="social-media">
+                            <nav>
+                                <a href=""><i class="fab fa-facebook-f icon"></i></a>
+                                <a href=""><i class="fab fa-twitter icon"></i></a>
+                                <a href=""><i class="fab fa-youtube icon"></i></a>
+                                <a href=""><i class="fab fa-linkedin icon"></i></a>
+                            </nav>
+                        </div><!-- social media ends-->
+                    </div><!-- top ends -->
+                    <div class="bottom">
+                        <nav>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Our Work</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Register</a></li>
+                            </ul>
+                            <a href="" class="btn donate">Donate</a>
+                        </nav>
+                    </div><!-- bottom ends -->
+                    <div class="mobile">
+                        <nav id="donate-nav">
+                            <a href="" class="donate-btn">Donate</a>
+                            <a href="" class="mobile-btn">Menu</a>
+                        </nav>
+                    </div>
+                    <!--mobile ends -->
+                </div>
+                <!--right-container ends -->
+            </div><!-- header- inner ends -->
+        </div><!-- container ends -->
+    </header>
+
+    <main>
+        <section class="section-wrapper">
+            <div class="carousel">
+                <button class="carousel__button carousel__button--left">
+                    <span>L</span>
+                </button>
+                <div class="carousel__track-container">
+                    <ul class="carousel__track">
+                        <li class="carousel__slide current-slide">
+                            <img class="carousel__image" src="assets/img/caro1.jpg" alt="">
+                        </li>
+                        <li class="carousel__slide">
+                            <img class="carousel__image" src="assets/img/caro2.jpg" alt="">
+                        </li>
+                        <li class="carousel__slide">
+                            <img class="carousel__image" src="assets/img/caro3.jpg" alt="">
+                        </li>
+                    </ul>
+                </div><!-- carousel__track-container ends-->
+                <button class="carousel__button carousel__button--right">
+                    <span>R</span>
+                </button>
+                <div class="carousel__nav">
+                    <button class="carousel__indicator current-slide"></button>
+                    <button class="carousel__indicator"></button>
+                    <button class="carousel__indicator"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- <script src="./components/Header/Header.js"></script> -->
+    <script src="./components/Carousel/Carousel.js"></script>
+</body>
+
+</html>
