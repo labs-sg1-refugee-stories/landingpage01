@@ -58,7 +58,7 @@ prevButton.addEventListener("click", e => {
   const currentDot = dotsNav.querySelector('.current-slide');
   const prevDot = currentDot.previousElementSibling;
   const prevIndex = slides.findIndex(slide => slide === prevSlide)
-  console.log(prevIndex);
+  //console.log(prevIndex);
 
   moveToSlide(track, currentSlide, prevSlide);
     updateDots(currentDot, prevDot);

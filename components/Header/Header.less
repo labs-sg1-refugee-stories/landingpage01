@@ -1,3 +1,5 @@
+@mobile: 500px;
+
 header  {
 
     .header-inner {
@@ -12,6 +14,9 @@ header  {
 
             .mobile     {
                 display: none;
+                @media (max-width: @mobile)     {
+                    display: block;
+                }
             }
 
             .top    {
@@ -40,6 +45,7 @@ header  {
                     text-align: center;
                     border: none;
                     background-color: transparent;
+                    outline: none;
                 }
 
                 .icon   {

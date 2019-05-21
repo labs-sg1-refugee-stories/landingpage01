@@ -167,6 +167,11 @@ header .header-inner .right-container {
 header .header-inner .right-container .mobile {
   display: none;
 }
+@media (max-width: 500px) {
+  header .header-inner .right-container .mobile {
+    display: block;
+  }
+}
 header .header-inner .right-container .top {
   display: flex;
   flex-direction: row-reverse;
@@ -190,6 +195,7 @@ header .header-inner .right-container .top .search-box button {
   text-align: center;
   border: none;
   background-color: transparent;
+  outline: none;
 }
 header .header-inner .right-container .top .icon {
   width: 30px;
