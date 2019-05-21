@@ -1,9 +1,12 @@
-@mobile: 500px;
+@mobile: 600px;
 
 header  {
 
     .header-inner {
         display: flex;
+        @media (max-width: @mobile)     {
+           display: block;
+        }
 
         
         .right-container    {
@@ -11,11 +14,40 @@ header  {
             flex-direction: column;
             justify-content: space-between;
             width: 90%;
+            @media (max-width: @mobile)     {
+                width: 100%;
+            }
+
+
 
             .mobile     {
                 display: none;
                 @media (max-width: @mobile)     {
                     display: block;
+                    border: 1px solid red;
+                    padding: 10px;
+                  
+
+                    nav     {
+                        display: flex;
+                        justify-content: space-between;
+
+                       
+                    }
+                }
+
+                .donate     {
+                    background-color: #9C000B;
+                    padding: 15px 10px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 120px;
+                    color: #fff;
+                    font-weight: 900;
+                    text-decoration: none;
+
                 }
             }
 
@@ -142,6 +174,10 @@ header  {
             width: 12%;
             background-color: #0180C7;
             text-align: center;
+
+            @media (max-width: @mobile)     {
+                width: 100%;
+            }
             
 
             a   {
