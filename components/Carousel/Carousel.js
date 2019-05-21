@@ -1,37 +1,81 @@
-const carousel = document.querySelector("[data-target='carousel']");
-const card = carousel.querySelector("[data-target='card']");
-const leftButton = document.querySelector("[data-action='slideLeft']");
-const rightButton = document.querySelector("[data-action='slideRight']");
+const track = document.querySelector(".carousel__track");
+const slides = Array.from(track.children);
+const nextButton = document.querySelector(".carousel__button--right");
+const prevButton = document.querySelector(".carousel__button--left");
+const dotsNav = document.querySelector(".carousel__nav");
+const dots = Array.from(dotsNav.children)
+const slideWidth = slides[0].getBoundingClientRect().width;
 
-// Prepare to limit the direction in which the carousel can slide,
-// and to control how much the carousel advances by each time.
-// In order to slide the carousel so that only three cards are perfectly visible each time,
-// you need to know the carousel width, and the margin placed on a given card in the carousel
-const carouselWidth = carousel.offsetWidth;
-const cardStyle = card.currentStyle || window.getComputedStyle(card)
-const cardMarginRight = Number(cardStyle.marginRight.match(/\d+/g)[0]);
 
-// Count the number of total cards you have
-const cardCount = carousel.querySelectorAll("[data-target='card']").length;
 
-// Define an offset property to dynamically update by clicking the button controls
-// as well as a maxX property so the carousel knows when to stop at the upper limit
-let offset = 0;
-const maxX = -((cardCount / 3) * carouselWidth +
-               (cardMarginRight * (cardCount / 3)) -
-               carouselWidth - cardMarginRight);
+//Arrange the slides next to each other
+const setSlidePosition = (slide, index) => {
+  slide.style.left = slideWidth  * index + 'px';
+};
+slides.forEach(setSlidePosition)
 
-               // Add the click events
-               leftButton.addEventListener("click", function() {
-                 if (offset !== 0) {
-                   offset += carouselWidth + cardMarginRight;
-                   carousel.style.transform = `translateX(${offset}px)`;
-                   }
-               })
+const moveToSlide = (track, currentSlide, targetSlide) => {
+  track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+  currentSlide.classList.remove('current-slide');
+  targetSlide.classList.add('current-slide');
+}
 
-               rightButton.addEventListener("click", function() {
-                 if (offset !== maxX) {
-                   offset -= carouselWidth + cardMarginRight;
-                   carousel.style.transform = `translateX(${offset}px)`;
-                 }
-               })
+const updateDots = (currentDot, targetDot) => {
+  currentDot.classList.remove('current-slide');
+  targetDot.classList.add('current-slide');
+}
+
+const hideShowButton = (slides, prevButton, nextButton, targetIndex) => {
+  if (targetIndex === 0) {
+    prevButton.classList.add("is-hidden")
+    nextButton.classList.remove("is-hidden")
+  } else if (targetIndex === slides.length - 1) {
+    prevButton.classList.remove("is-hidden")
+    nextButton.classList.add("is-hidden")
+  } else {
+    prevButton.classList.remove("is-hidden");
+    nextButton.classList.remove("is-hidden")
+  }
+}
+
+//When I click right button, move slides to the right
+nextButton.addEventListener("click", e => {
+  const currentSlide = track.querySelector(".current-slide");
+  const nextSlide = currentSlide.nextElementSibling;
+  const currentDot = dotsNav.querySelector('.current-slide')
+  const nextDot = currentDot.nextElementSibling
+  const nextIndex = slides.findIndex(slide => slide === nextSlide)
+
+  moveToSlide(track, currentSlide, nextSlide);
+  updateDots(currentDot, nextDot);
+  hideShowButton(slides, prevButton, nextButton, nextIndex)
+})
+
+//When I click left button, move slides to the left
+prevButton.addEventListener("click", e => {
+  const currentSlide = track.querySelector(".current-slide");
+  const prevSlide = currentSlide.previousElementSibling;
+  const currentDot = dotsNav.querySelector('.current-slide');
+  const prevDot = currentDot.previousElementSibling;
+  const prevIndex = slides.findIndex(slide => slide === prevSlide)
+  console.log(prevIndex);
+
+  moveToSlide(track, currentSlide, prevSlide);
+    updateDots(currentDot, prevDot);
+    hideShowButton(slides, prevButton, nextButton, prevIndex)
+})
+
+//When I click on nav indicators, move to that slide
+dotsNav.addEventListener("click", e => {
+  const targetDot = e.target.closest("button");
+  if (!targetDot) return;
+  const currentSlide = track.querySelector(".current-slide");
+  const currentDot = dotsNav.querySelector(".current-slide");
+  const targetIndex = dots.findIndex(dot => dot === targetDot)
+  const targetSlide = slides[targetIndex];
+
+  moveToSlide(track, currentSlide, targetSlide);
+  updateDots(currentDot, targetDot);
+  hideShowButton(slides, prevButton, nextButton, targetIndex)
+
+})
