@@ -43,8 +43,16 @@ html    {
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: @mobile)     {
+            flex-direction: column;
+        }
+
         .story  {
             width: 30%;
+
+            @media (max-width: @mobile)     {
+                width: 100%;
+            }
 
             img     {
                 width: 100%;
@@ -73,6 +81,10 @@ html    {
         font-size: 1.5rem;
         background-color: #333;
         color: #f7f7f7;
+
+        @media (max-width: @mobile)     {
+            font-size: 1.1rem;
+        }
     }
 
     .join-form  {
@@ -93,6 +105,10 @@ html    {
             outline: none;
             padding: 5px;
             margin-top: 20px;
+
+            @media (max-width: @mobile)     {
+                min-width: 70%;
+            }
         }
 
         button  {
@@ -116,8 +132,17 @@ footer  {
         color: #fff;
         padding: 50px;
 
+        @media (max-width: @mobile)     {
+            flex-direction: column;
+        }
+
         .footer-content     {
             width: 35%;
+            
+            @media (max-width: @mobile)     {
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
 
         h4  {
