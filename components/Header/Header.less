@@ -28,7 +28,11 @@ header  {
                     padding: 8px;
                     border: 1px thin #ccc;
                     outline: none;
-                    //display: none;
+                    display: none;
+
+                    &.active  {
+                        display: inline-block;
+                    }
                 }
 
                 .search-box button  {
@@ -49,6 +53,10 @@ header  {
 
                 .social-media   {
                     padding: 5px;
+
+                    &.is-hidden {
+                        display: none;
+                    }
 
                     a   {
                         display: inline-block;
@@ -82,15 +90,16 @@ header  {
                             padding: 10px 5px;
                             text-align: center;
                             line-height: 30px;
+
+                            &:hover     {
+                                color: #0180C7;
+                            }
                         }
 
                     }
 
                     .donate     {
-                        border: 1px solid red;
-                        //display: block;
-                        //line-height: 40px;
-                        background-color: red;
+                        background-color: #9C000B;
                         padding: 5px 10px;
                         border-radius: 5px;
                         display: flex;
@@ -100,6 +109,11 @@ header  {
                         color: #fff;
                         font-weight: 900;
                         text-decoration: none;
+
+                        &:hover     {
+                            background: #f2f2f2;
+                            color: #9C000B;
+                        }
                         
                     }
 
