@@ -399,6 +399,10 @@ html {
   margin-right: auto;
   margin-left: auto;
 }
+.container p {
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
 .section-wrapper {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -529,4 +533,63 @@ footer a {
   display: block;
   padding: 10px;
   color: #fff;
+}
+.section-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f2f2f2;
+}
+.section-wrapper h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.section-wrapper h4 {
+  font-weight: 700;
+  padding: 10px;
+}
+.section-wrapper .section-header {
+  padding: 30px 10px;
+}
+.section-wrapper .team-member-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.section-wrapper .team-member-container.top {
+  justify-content: space-around;
+}
+.section-wrapper .team-member-container .team-member {
+  width: 30%;
+  margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  .section-wrapper .team-member-container .team-member {
+    min-width: 45%;
+  }
+}
+@media (max-width: 420px) {
+  .section-wrapper .team-member-container .team-member {
+    width: 100%;
+  }
+}
+.section-wrapper .team-member-container img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+.section-wrapper .team-member-container .role {
+  text-align: center;
+}
+.section-wrapper .team-member-container .social {
+  text-align: center;
+}
+.section-wrapper .team-member-container .social a {
+  display: inline-block;
+  padding: 10px;
+  color: #222;
+  font-size: 1.2rem;
+}
+.section-wrapper .team-member-container .social a:hover {
+  color: #0180C7;
 }
