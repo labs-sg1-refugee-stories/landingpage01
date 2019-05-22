@@ -174,13 +174,17 @@ header .header-inner .right-container {
     width: 100%;
   }
 }
+@media (max-width: 768px) {
+  header .header-inner .right-container {
+    width: 100%;
+  }
+}
 header .header-inner .right-container .mobile {
   display: none;
 }
 @media (max-width: 600px) {
   header .header-inner .right-container .mobile {
     display: block;
-    border: 1px solid red;
     padding: 10px;
   }
   header .header-inner .right-container .mobile nav {
@@ -188,7 +192,18 @@ header .header-inner .right-container .mobile {
     justify-content: space-between;
   }
 }
-header .header-inner .right-container .mobile .donate {
+@media (max-width: 768px) {
+  header .header-inner .right-container .mobile {
+    display: block;
+    padding: 10px;
+  }
+  header .header-inner .right-container .mobile nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+header .header-inner .right-container .mobile .donate,
+header .header-inner .right-container .mobile .mobile-btn {
   background-color: #9C000B;
   padding: 15px 10px;
   border-radius: 5px;
@@ -200,6 +215,9 @@ header .header-inner .right-container .mobile .donate {
   font-weight: 900;
   text-decoration: none;
 }
+header .header-inner .right-container .mobile .mobile-btn {
+  background-color: green;
+}
 header .header-inner .right-container .top {
   display: flex;
   flex-direction: row-reverse;
@@ -207,6 +225,11 @@ header .header-inner .right-container .top {
   align-items: center;
 }
 @media (max-width: 600px) {
+  header .header-inner .right-container .top {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
   header .header-inner .right-container .top {
     display: none;
   }
@@ -254,9 +277,20 @@ header .header-inner .right-container .bottom {
   background-color: #fff;
   padding: 10px;
 }
+header .header-inner .right-container .bottom.active {
+  display: block;
+  padding-top: 1px;
+}
 @media (max-width: 600px) {
   header .header-inner .right-container .bottom {
     display: none;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  header .header-inner .right-container .bottom {
+    display: none;
+    width: 100%;
   }
 }
 header .header-inner .right-container .bottom nav {
@@ -267,6 +301,18 @@ header .header-inner .right-container .bottom nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+@media (max-width: 600px) {
+  header .header-inner .right-container .bottom nav ul {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  header .header-inner .right-container .bottom nav ul {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 header .header-inner .right-container .bottom nav ul a {
   color: #000;
@@ -279,8 +325,29 @@ header .header-inner .right-container .bottom nav ul a {
   text-align: center;
   line-height: 30px;
 }
+@media (max-width: 600px) {
+  header .header-inner .right-container .bottom nav ul a {
+    display: block;
+    background-color: #0180C7;
+    margin-right: 0;
+    width: 100%;
+    border-bottom: 1px solid #f2f2f2;
+    color: #fff;
+  }
+}
+@media (max-width: 768px) {
+  header .header-inner .right-container .bottom nav ul a {
+    display: block;
+    background-color: #0180C7;
+    margin-right: 0;
+    width: 100%;
+    border-bottom: 1px solid #f2f2f2;
+    color: #fff;
+  }
+}
 header .header-inner .right-container .bottom nav ul a:hover {
   color: #0180C7;
+  background-color: #fff;
 }
 header .header-inner .right-container .bottom nav .donate {
   background-color: #9C000B;
@@ -294,18 +361,33 @@ header .header-inner .right-container .bottom nav .donate {
   font-weight: 900;
   text-decoration: none;
 }
+@media (max-width: 600px) {
+  header .header-inner .right-container .bottom nav .donate {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  header .header-inner .right-container .bottom nav .donate {
+    display: none;
+  }
+}
 header .header-inner .right-container .bottom nav .donate:hover {
   background: #f2f2f2;
   color: #9C000B;
 }
 header .header-inner .logo-container {
-  width: 12%;
+  width: 20%;
   background-color: #0180C7;
   text-align: center;
 }
 @media (max-width: 600px) {
   header .header-inner .logo-container {
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  header .header-inner .logo-container {
+    height: 70px;
   }
 }
 header .header-inner .logo-container a {

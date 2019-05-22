@@ -1,4 +1,5 @@
 @mobile: 600px;
+@tablet: 768px;
 
 header  {
 
@@ -18,13 +19,16 @@ header  {
                 width: 100%;
             }
 
+            @media (max-width: @tablet)     {
+                width: 100%;
+            }
+
 
 
             .mobile     {
                 display: none;
                 @media (max-width: @mobile)     {
                     display: block;
-                    border: 1px solid red;
                     padding: 10px;
                   
 
@@ -36,7 +40,20 @@ header  {
                     }
                 }
 
-                .donate     {
+                @media (max-width: @tablet)     {
+                    display: block;
+                    padding: 10px;
+                  
+
+                    nav     {
+                        display: flex;
+                        justify-content: space-between;
+
+                       
+                    }
+                }
+
+                .donate, .mobile-btn     {
                     background-color: #9C000B;
                     padding: 15px 10px;
                     border-radius: 5px;
@@ -48,6 +65,10 @@ header  {
                     font-weight: 900;
                     text-decoration: none;
 
+                }
+
+                .mobile-btn     {
+                    background-color: green;
                 }
             }
 
@@ -61,6 +82,9 @@ header  {
                     display: none;
                 }
                 
+                @media (max-width:@tablet)     {
+                    display: none;
+                }
 
                 .search-box input   {
                     height: 30px;
@@ -113,8 +137,19 @@ header  {
                 background-color: #fff;
                 padding: 10px;
 
-                @media (max-width:@mobile)     {
+                &.active {
+                    display: block;
+                    padding-top: 1px;
+                }
+
+                @media (max-width:@mobile)    {
                     display: none;
+                    width: 100%;
+                }
+
+                @media (max-width: @tablet) {
+                    display: none;
+                    width: 100%;
                 }
 
                 nav     {
@@ -125,6 +160,15 @@ header  {
                         margin: 0;
                         padding: 0;
                         list-style: none;
+                        @media (max-width:@mobile)     {
+                            width: 100%;
+                            flex-direction: column;
+                        }
+
+                        @media (max-width:@tablet)     {
+                            width: 100%;
+                            flex-direction: column;
+                        }
 
                         a   {
                             color: #000;
@@ -137,9 +181,34 @@ header  {
                             text-align: center;
                             line-height: 30px;
 
+
+                            @media (max-width:@mobile)     {
+                               display: block;
+                               background-color: #0180C7;
+                               margin-right: 0;
+                               width: 100%;
+                               border-bottom: 1px solid #f2f2f2;
+                               color: #fff;
+
+                            }
+
+                            @media (max-width:@tablet)     {
+                                display: block;
+                                background-color: #0180C7;
+                                margin-right: 0;
+                                width: 100%;
+                                border-bottom: 1px solid #f2f2f2;
+                                color: #fff;
+ 
+                             }
+
+
                             &:hover     {
                                 color: #0180C7;
+                                background-color: #fff;
                             }
+
+                            
                         }
 
                     }
@@ -156,6 +225,17 @@ header  {
                         font-weight: 900;
                         text-decoration: none;
 
+                        @media (max-width:@mobile)     {
+                            display: none;
+                            
+                        }
+
+                        @media (max-width:@tablet)     {
+                            display: none;
+                            
+                        }
+
+
                         &:hover     {
                             background: #f2f2f2;
                             color: #9C000B;
@@ -171,12 +251,16 @@ header  {
         }
 
         .logo-container     {
-            width: 12%;
+            width: 20%;
             background-color: #0180C7;
             text-align: center;
 
             @media (max-width: @mobile)     {
                 width: 100%;
+            }
+
+            @media (max-width: @tablet)     {
+                height: 70px;
             }
             
 
@@ -190,3 +274,4 @@ header  {
         }
     }
 }
+
