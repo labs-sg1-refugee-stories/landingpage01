@@ -1,3 +1,4 @@
+/*
 .carousel   {
     height: 600px;
     width: 100%;
@@ -82,4 +83,113 @@
   .is-hidden   {
     display: none;
   }
+
+  */
+
+  .carousel   {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: #222;
+    //background-blend-mode: overlay;
+
+    .carousel-inner   {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    }
+
+    img   {
+      width: 100%;
+      height: calc(100vh - 120px);
+    }
+
+    .carousel__button   {
+      position: absolute;
+     
+      transform: translateY(-50%);
+      background: #fff;
+      border-radius: 0;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .carousel__button--left   {
+      bottom: 50%;
+      z-index: 10;
+      left: 30px;
+    }
+    
+    .carousel__button--right   {
+      top: 50%;
+      right: 30px;
+    }
+
+    &-item:not(:nth-of-type(1)) {
+      display: none;
+    }
+
+    .slide-caption  {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2  {
+        font-size: @carouselHeaderFont;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        background-blend-mode: difference;
+
+        @media (max-width: @mobile)   {
+          font-size: 2rem;
+          font-weight: 500;
+          top: 20%;
+        }
+      }
+
+      .subscribe  {
+        width: 40%;
+        display: block;
+        padding: 10px;
+        background: #0180C7;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 600;
+        outline: none;
+        margin-top: 10px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+
+        @media (max-width: @mobile)   {
+          font-size: 1rem;
+          padding: 1rem 2rem;
+          width: 50%;
+          padding: .7rem;
+        }
+      }
+    }
+
+    .read-more    {
+      display: block;
+      padding: 15px 25px;
+      background-color: #0180C7;
+      color: #fff;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+
+    }
+  }
+
+
   
