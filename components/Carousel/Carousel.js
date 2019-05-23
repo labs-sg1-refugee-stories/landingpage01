@@ -1,3 +1,4 @@
+/*
 const track = document.querySelector(".carousel__track");
 const slides = Array.from(track.children);
 const nextButton = document.querySelector(".carousel__button--right");
@@ -58,7 +59,7 @@ prevButton.addEventListener("click", e => {
   const currentDot = dotsNav.querySelector('.current-slide');
   const prevDot = currentDot.previousElementSibling;
   const prevIndex = slides.findIndex(slide => slide === prevSlide)
-  //console.log(prevIndex);
+
 
   moveToSlide(track, currentSlide, prevSlide);
     updateDots(currentDot, prevDot);
@@ -79,3 +80,38 @@ dotsNav.addEventListener("click", e => {
   hideShowButton(slides, prevButton, nextButton, targetIndex)
 
 })
+*/
+
+class Carousel {
+  constructor(element) {
+    this.element = element;
+    this.rightButton = this.element.querySelector('.carousel__button--right');
+    this.leftButton = this.element.querySelector('.carousel__button--left');
+    this.currentIndex = 0;
+    this.carousels = this.element.querySelectorAll('.carousel-item');
+    this.rightButton.addEventListener('click', this.slideRight);
+    this.leftButton.addEventListener('click', this.slideLeft);
+  }
+
+  slideLeft = () => {
+    console.log(this.currentIndex)
+    this.currentIndex < 1 ? this.currentIndex = this.carousels.length - 1 : this.currentIndex--
+    this.carousels.forEach(carousel => carousel.style.display = 'none');
+    this.carousels[this.currentIndex].style.display = 'block';
+    TweenMax.from(this.carousels[this.currentIndex], 0.5, {x: 20, opacity:0})
+    console.log('left')
+  }
+
+  slideRight = () => {
+    console.log(this.currentIndex)    
+    this.currentIndex > this.carousels.length - 2 ? this.currentIndex = 0 : this.currentIndex++
+    this.carousels.forEach(carousel => carousel.style.display = 'none');
+    this.carousels[this.currentIndex].style.display = 'block';
+    TweenMax.from(this.carousels[this.currentIndex], 0.5, {x: -20, opacity:0})
+    console.log('right')
+  }
+}
+
+let carousel = document.querySelector('.carousel');
+carousel = new Carousel(carousel);
+//console.log(object)

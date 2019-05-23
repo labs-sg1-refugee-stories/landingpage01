@@ -1,9 +1,10 @@
+
 @import "reset.less";
+@import "variable.less";
 @import "../components/Header/Header.less";
 @import "../components/Carousel/Carousel.less";
 
 
-@smallScreen: 420px;
 html    {
     background: #f7f7f7;
 }
@@ -75,6 +76,10 @@ html    {
             cursor: pointer;
             margin-bottom: 10px;
             border: 1px solid #222;
+            text-decoration: none;
+            color: #222;
+            display: inline-block;
+            background-color: #fff;
 
             &:hover     {
                 background: #222;
@@ -88,6 +93,11 @@ html    {
         font-size: 1.5rem;
         background-color: #333;
         color: #f7f7f7;
+        
+
+        .quoteContent   {
+            padding: 4rem 1rem;
+        }
 
         @media (max-width: @mobile)     {
             font-size: 1.1rem;
@@ -210,6 +220,10 @@ footer  {
 
             @media (max-width: @smallScreen)     {
                 width: 100%;
+            }
+
+            img     {
+                border-radius: 50%;
             }
         }
 
