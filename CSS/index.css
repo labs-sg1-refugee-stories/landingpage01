@@ -422,7 +422,7 @@ header .header-inner .logo-container a {
 .carousel img {
   width: 100%;
   height: calc(100vh - 120px);
-  object-fit: cover;
+  object-fit: top;
 }
 .carousel .carousel__button {
   position: absolute;
@@ -482,6 +482,7 @@ header .header-inner .logo-container a {
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none;
 }
 @media (max-width: 600px) {
   .carousel .slide-caption .subscribe {
