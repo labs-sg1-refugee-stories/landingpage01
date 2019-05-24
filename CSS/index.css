@@ -107,6 +107,12 @@ section {
 body {
   line-height: 1;
 }
+@media (max-width: 600px) {
+  p {
+    line-height: 2;
+    font-size: 1.3rem;
+  }
+}
 ol,
 ul {
   list-style: none;
@@ -157,8 +163,14 @@ html {
 }
 header .header-inner {
   display: flex;
+  justify-content: space-between;
 }
 @media (max-width: 600px) {
+  header .header-inner {
+    display: block;
+  }
+}
+@media (max-width: 800px) {
   header .header-inner {
     display: block;
   }
@@ -167,14 +179,13 @@ header .header-inner .right-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 90%;
 }
 @media (max-width: 600px) {
   header .header-inner .right-container {
     width: 100%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   header .header-inner .right-container {
     width: 100%;
   }
@@ -192,7 +203,7 @@ header .header-inner .right-container .mobile {
     justify-content: space-between;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   header .header-inner .right-container .mobile {
     display: block;
     padding: 10px;
@@ -229,7 +240,7 @@ header .header-inner .right-container .top {
     display: none;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   header .header-inner .right-container .top {
     display: none;
   }
@@ -274,7 +285,6 @@ header .header-inner .right-container .top .social-media a {
 header .header-inner .right-container .bottom {
   display: flex;
   justify-content: flex-end;
-  background-color: #fff;
   padding: 10px;
 }
 header .header-inner .right-container .bottom.active {
@@ -287,7 +297,7 @@ header .header-inner .right-container .bottom.active {
     width: 100%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   header .header-inner .right-container .bottom {
     display: none;
     width: 100%;
@@ -308,7 +318,7 @@ header .header-inner .right-container .bottom nav ul {
     flex-direction: column;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   header .header-inner .right-container .bottom nav ul {
     width: 100%;
     flex-direction: column;
@@ -318,12 +328,11 @@ header .header-inner .right-container .bottom nav ul a {
   color: #000;
   margin-right: 2rem;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
   display: inline-block;
   padding: 10px 5px;
   text-align: center;
   line-height: 30px;
+  font-size: 2rem;
 }
 @media (max-width: 600px) {
   header .header-inner .right-container .bottom nav ul a {
@@ -335,7 +344,7 @@ header .header-inner .right-container .bottom nav ul a {
     color: #fff;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   header .header-inner .right-container .bottom nav ul a {
     display: block;
     background-color: #0180C7;
@@ -347,7 +356,7 @@ header .header-inner .right-container .bottom nav ul a {
 }
 header .header-inner .right-container .bottom nav ul a:hover {
   color: #0180C7;
-  background-color: #fff;
+  background-color: #444;
 }
 header .header-inner .right-container .bottom nav .donate {
   background-color: #9C000B;
@@ -366,7 +375,7 @@ header .header-inner .right-container .bottom nav .donate {
     display: none;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   header .header-inner .right-container .bottom nav .donate {
     display: none;
   }
@@ -376,30 +385,26 @@ header .header-inner .right-container .bottom nav .donate:hover {
   color: #9C000B;
 }
 header .header-inner .logo-container {
-  width: 20%;
   background-color: #0180C7;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-left: 100px;
 }
 @media (max-width: 600px) {
   header .header-inner .logo-container {
     width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  header .header-inner .logo-container {
-    height: 70px;
+    margin-left: 0;
   }
 }
 header .header-inner .logo-container a {
   text-decoration: none;
   height: 100%;
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 3rem;
   color: #fff;
+  padding: 15px 5px;
 }
 /*
 .carousel   {
@@ -502,6 +507,7 @@ header .header-inner .logo-container a {
 .carousel img {
   width: 100%;
   height: calc(100vh - 120px);
+  object-fit: cover;
 }
 .carousel .carousel__button {
   position: absolute;
@@ -561,6 +567,7 @@ header .header-inner .logo-container a {
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none;
 }
 @media (max-width: 600px) {
   .carousel .slide-caption .subscribe {

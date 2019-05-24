@@ -102,11 +102,11 @@
     img   {
       width: 100%;
       height: calc(100vh - 120px);
+      object-fit: cover;
     }
 
     .carousel__button   {
       position: absolute;
-     
       transform: translateY(-50%);
       background: #fff;
       border-radius: 0;
@@ -167,6 +167,7 @@
         text-align: center;
         cursor: pointer;
         border-radius: 5px;
+        text-decoration: none;
 
         @media (max-width: @mobile)   {
           font-size: 1rem;

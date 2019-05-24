@@ -94,12 +94,10 @@ class Carousel {
   }
 
   slideLeft = () => {
-    console.log(this.currentIndex)
     this.currentIndex < 1 ? this.currentIndex = this.carousels.length - 1 : this.currentIndex--
     this.carousels.forEach(carousel => carousel.style.display = 'none');
     this.carousels[this.currentIndex].style.display = 'block';
     TweenMax.from(this.carousels[this.currentIndex], 0.5, {x: 20, opacity:0})
-    console.log('left')
   }
 
   slideRight = () => {
