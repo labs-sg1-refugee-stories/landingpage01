@@ -127,6 +127,12 @@ table {
   border-spacing: 0;
 }
 /* box sizing border box */
+@media (max-width: 600px) {
+  p {
+    line-height: 2;
+    font-size: 1.3rem;
+  }
+}
 html {
   box-sizing: border-box;
 }
@@ -400,94 +406,8 @@ header .header-inner .logo-container a {
   font-size: 2rem;
   font-weight: 900;
   color: #fff;
+  padding-top: 20px;
 }
-/*
-.carousel   {
-    height: 600px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  .carousel__image   {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .carousel__track-container   {
-    background: lightgreen;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .carousel__track   {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-    height: 100%;
-    transition: transform 250ms ease-in-out;
-  }
-  
-  .carousel__slide   {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .carousel__button   {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: navajowhite;
-    border-radius: 0;
-    cursor: pointer;;
-  }
-  
-  .carousel__button--left   {
-    left: 30px;
-  }
-  
-  .carousel__button--right   {
-    right: 30px;
-  }
-  
-  .carousel__button span   {
-    display: block;
-    width: 10px;
-  }
-  
-  .carousel__nav   {
-    background: #333;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-  }
-  
-  .carousel__indicator   {
-    border:0;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    background: #ccc;
-    margin: 0 10px;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-  }
-  
-  .carousel__indicator.current-slide   {
-    background: rgba(0, 0, 0, 0.8);
-  }
-  
-  .is-hidden   {
-    display: none;
-  }
-
-  */
 .carousel {
   width: 100%;
   margin: 0 auto;
@@ -502,6 +422,7 @@ header .header-inner .logo-container a {
 .carousel img {
   width: 100%;
   height: calc(100vh - 120px);
+  object-fit: cover;
 }
 .carousel .carousel__button {
   position: absolute;
